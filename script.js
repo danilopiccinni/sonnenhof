@@ -6,14 +6,15 @@ createApp({
       siteData: {
         name: "Sonnenhof",
         meta: {
-          email: "info@sonnenhof.it",
-          phone: "+39 0123 456789",
-          address: "Via delle Alpi 1, Trentino-Alto Adige",
+          email: "infosonnenhof@gmail.com",
+          phone: "+39 338 192 56 16",
+          address: "St. Josefstraße 144, Lagundo - BO",
           description: "Il maso Sonnenhof offre ospitalità in un appartamento immerso nella natura, tra le montagne dell'Alto Adige."
         },
         menu: [
           { label: "Home", href: "#heroCarousel" },
           { label: "Chi siamo", href: "#about" },
+          { label: "Affitta", href: "#rent" },
           { label: "Servizi", href: "#services" },
           { label: "Galleria", href: "#gallery" },
           { label: "Contatti", href: "#contact" }
