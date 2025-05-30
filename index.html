@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sonnenhof - Fattoria</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">{{ siteData.name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item" v-for="(item, index) in siteData.menu" :key="index">
+              <a class="nav-link" :href="item.href">{{ item.label }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CAROUSEL HERO -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  
+  <!-- INDICATORS -->
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      v-for="(slide, index) in siteData.hero.slides"
+      :data-bs-target="'#heroCarousel'"
+      :data-bs-slide-to="index"
+      :class="{ active: index === 0 }"
+      :aria-current="index === 0"
+      :aria-label="'Slide ' + (index + 1)">
+    </button>
+  </div>
+
+  <!-- SLIDES -->
+  <div class="carousel-inner" style="height: 90vh; max-height: 90vh;">
+    <div
+      class="carousel-item h-100"
+      v-for="(slide, index) in siteData.hero.slides"
+      :class="{ active: index === 0 }">
+      
+      <img
+        :src="slide.img"
+        class="d-block w-100 h-100"
+        style="object-fit: cover;"
+        :alt="'Slide ' + (index + 1)"
+      />
+      
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4 rounded">
+        <h1>{{ siteData.hero.title }}</h1>
+        <p>{{ siteData.hero.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+
+
+    <!-- ABOUT -->
+    <section class="py-5 bg-white" id="about">
+      <div class="container text-center">
+        <h2>Chi siamo</h2>
+        <p class="lead">{{ siteData.about }}</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facilis quidem aspernatur eius perspiciatis, reprehenderit molestias porro natus quis rerum mollitia molestiae dolores laudantium dolore cumque autem sit itaque deleniti.lore
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt magni et, quibusdam, qui nobis sed natus sit nesciunt ad ipsum cumque porro labore tempora perferendis ipsam culpa accusantium laborum!
+        </p>
+      </div>
+    </section>
+
+<!-- SPLIT SECTION: CAROUSEL + CARD -->
+<section class="py-5 bg-white" id="experience">
+  <div class="container">
+    <div class="row g-5 align-items-stretch">
+      
+      <!-- LEFT: CAROUSEL -->
+      <div class="col-lg-6 d-flex">
+        <div id="carouselExperience" class="carousel slide w-100 shadow rounded-4 overflow-hidden" data-bs-ride="carousel">
+          <div class="carousel-inner h-100" style="aspect-ratio: 4 / 3;">
+            <div 
+              class="carousel-item h-100"
+              v-for="(img, index) in siteData.imganimals"
+              :key="index"
+              :class="{ active: index === 0 }"
+            >
+              <img :src="img" class="d-block w-100 h-100 object-fit-cover" :alt="'Slide ' + (index + 1)" />
+            </div>
+          </div>
+          <!-- CONTROLLI -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExperience" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Precedente</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExperience" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Successiva</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: CARD -->
+      <div class="col-lg-6 d-flex">
+        <div class="card shadow-lg bg-light border-0 rounded-4 p-4 w-100">
+          <div class="card-body d-flex flex-column justify-content-between h-100">
+            <div>
+              <h3 class="card-title mb-3">Vivi un'esperienza autentica</h3>
+              <p class="card-text">Trascorri le tue giornate tra i ritmi lenti della natura. Al Sonnenhof potrai assaporare la vita di un vero maso altoatesino: animali, prodotti genuini, paesaggi mozzafiato.</p>
+              <ul class="list-unstyled">
+                <li><i class="fa-solid fa-check text-success me-2"></i> Attività con gli animali</li>
+                <li><i class="fa-solid fa-check text-success me-2"></i> Degustazioni e prodotti tipici</li>
+                <li><i class="fa-solid fa-check text-success me-2"></i> Escursioni guidate</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn btn-primary mt-3">Contattaci</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ROOM PHOTO COLLAPSE SECTION -->
+<section class="py-5 bg-light" id="room-gallery">
+  <div class="container text-center">
+
+    <!-- TITOLO ATTIRANTE -->
+    <h2 class="mb-4 text-primary fw-bold">Scopri ogni angolo della stanza</h2>
+
+
+    <!-- COLLAPSIBLE GALLERY -->
+
+      <div class="row g-3 justify-content-center">
+
+        <!-- CICLO FOTO -->
+        <div
+          class="col-6 col-md-4 col-lg-3"
+          v-for="(photo, index) in siteData.roomphotos"
+          :key="index">
+          <div class="rounded-4 overflow-hidden shadow-sm h-100">
+            <img
+              :src="photo"
+              class="img-fluid w-100 h-100"
+              style="object-fit: cover; aspect-ratio: 4 / 3;"
+              :alt="'Foto stanza ' + (index + 1)"
+            />
+          </div>
+        </div>
+
+      </div>
+
+
+  </div>
+</section>
+
+
+
+    <!-- SERVICES -->
+    <section class="py-5 bg-light" id="services">
+      <div class="container">
+        <h2 class="text-center mb-4">I nostri servizi</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4" v-for="(service, index) in siteData.services" :key="index">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <i :class="service.icon + ' fa-3x mb-3 text-primary'"></i>
+                <h5>{{ service.title }}</h5>
+                <p>{{ service.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="py-5" id="gallery">
+    <div class="container">
+        <h2 class="text-center mb-4">Galleria</h2>
+        <div class="row g-3">
+        <div class="col-sm-6 col-md-4" v-for="(img, index) in siteData.gallery" :key="index">
+            <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
+            <img :src="img" alt="Foto della galleria" class="w-100 h-100 object-fit-cover" />
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+
+<!-- CONTACT -->
+<section class="py-5 bg-light" id="contact">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2>Contattaci</h2>
+      <p>
+        Per prenotazioni o informazioni scrivici a
+        <strong>{{ siteData.meta.email }}</strong> o chiamaci al
+        <strong>{{ siteData.meta.phone }}</strong>.
+      </p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Il tuo nome" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="La tua email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Messaggio</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Scrivici il tuo messaggio..." required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary px-4">Invia Messaggio</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <h5>{{ siteData.name }}</h5>
+        <p>{{ siteData.meta.description }}</p>
+        <p>{{ siteData.meta.address }}</p>
+        <p>Email: <a class="text-white" :href="'mailto:' + siteData.meta.email">{{ siteData.meta.email }}</a></p>
+        <p>Tel: <a class="text-white" :href="'tel:' + siteData.meta.phone">{{ siteData.meta.phone }}</a></p>
+        <hr class="border-secondary" />
+        <p class="mb-0">&copy; {{ new Date().getFullYear() }} Sonnenhof. Tutti i diritti riservati.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App Vue -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
