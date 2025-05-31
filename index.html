@@ -16,68 +16,77 @@
 </head>
 <body>
   <div id="app">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">{{ siteData.name }}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item" v-for="(item, index) in siteData.menu" :key="index">
-              <a class="nav-link" :href="item.href">{{ item.label }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- CAROUSEL HERO -->
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-  
-  <!-- INDICATORS -->
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      v-for="(slide, index) in siteData.hero.slides"
-      :data-bs-target="'#heroCarousel'"
-      :data-bs-slide-to="index"
-      :class="{ active: index === 0 }"
-      :aria-current="index === 0"
-      :aria-label="'Slide ' + (index + 1)">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-secondary bg-opacity-75 sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">{{ siteData.name }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" v-for="(item, index) in siteData.menu" :key="index">
+          <a class="nav-link px-3" :href="item.href">{{ item.label }}</a>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <!-- SLIDES -->
-  <div class="carousel-inner" style="height: 90vh; max-height: 90vh;">
-    <div
-      class="carousel-item h-100"
-      v-for="(slide, index) in siteData.hero.slides"
-      :class="{ active: index === 0 }">
-      
-      <img
-        :src="slide.img"
-        class="d-block w-100 h-100"
-        style="object-fit: cover;"
-        :alt="'Slide ' + (index + 1)"
-      />
-      
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4 rounded">
-        <h1>{{ siteData.hero.title }}</h1>
-        <p>{{ siteData.hero.subtitle }}</p>
-      </div>
+
+    <!-- HERO SECTION -->
+<section class="position-relative" style="height: 90vh; max-height: 90vh; overflow: hidden;">
+
+  <!-- TITOLO FISSO SOPRA IL CAROSELLO -->
+  <div class="position-absolute top-50 start-50 translate-middle text-white text-center z-3 px-3">
+    <div class="bg-dark bg-opacity-50 p-4 rounded">
+      <h1>{{ siteData.hero.title }}</h1>
+      <p class="lead">{{ siteData.hero.subtitle }}</p>
     </div>
   </div>
 
-  <!-- CONTROLS -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
+  <!-- CAROUSEL -->
+  <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+    
+    <!-- INDICATORS -->
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        v-for="(slide, index) in siteData.hero.slides"
+        :data-bs-target="'#heroCarousel'"
+        :data-bs-slide-to="index"
+        :class="{ active: index === 0 }"
+        :aria-current="index === 0"
+        :aria-label="'Slide ' + (index + 1)">
+      </button>
+    </div>
+
+    <!-- SLIDES -->
+    <div class="carousel-inner h-100">
+      <div
+        class="carousel-item h-100"
+        v-for="(slide, index) in siteData.hero.slides"
+        :class="{ active: index === 0 }">
+        
+        <img
+          :src="slide.img"
+          class="d-block w-100 h-100"
+          style="object-fit: cover;"
+          :alt="'Slide ' + (index + 1)"
+        />
+      </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
 
 
 
@@ -218,15 +227,19 @@
 <!-- CONTACT -->
 <section class="py-5 bg-light" id="contact">
   <div class="container">
+    
+    <!-- INTESTAZIONE -->
     <div class="text-center mb-4">
       <h2>Contattaci</h2>
-      <p>
+      <p class="mb-0">
         Per prenotazioni o informazioni scrivici a
-        <strong>{{ siteData.meta.email }}</strong> o chiamaci al
-        <strong>{{ siteData.meta.phone }}</strong>.
+        <strong><span class="text-nowrap">{{ siteData.meta.email }}</span></strong>
+        o chiamaci al
+        <strong><span class="text-nowrap">{{ siteData.meta.phone }}</span></strong>.
       </p>
     </div>
 
+    <!-- FORM -->
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <form>
@@ -248,23 +261,63 @@
         </form>
       </div>
     </div>
+
   </div>
 </section>
 
 
-    <!-- FOOTER -->
-    <footer class="bg-secondary text-white py-4">
-      <div class="container text-center">
-        <h5>{{ siteData.name }}</h5>
-        <p>{{ siteData.meta.description }}</p>
-        <p>{{ siteData.meta.address }}</p>
-        <p>Email: <a class="text-white" :href="'mailto:' + siteData.meta.email">{{ siteData.meta.email }}</a></p>
-        <p>Tel: <a class="text-white" :href="'tel:' + siteData.meta.phone">{{ siteData.meta.phone }}</a></p>
-        <hr class="border-secondary" />
-        <p class="mb-0">&copy; {{ new Date().getFullYear() }} Sonnenhof. Tutti i diritti riservati.</p>
+<!-- FOOTER -->
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+    <div class="row justify-content-center text-center  g-4">
+      
+      <!-- BRAND -->
+      <div class="col-12 col-md-4 d-flex flex-column align-items-center ">
+        <h4 class="fw-bold mb-2">{{ siteData.name }}</h4>
+        <p class="small mb-0">{{ siteData.meta.description }}</p>
       </div>
-    </footer>
+
+      <!-- CONTATTI -->
+      <div class="col-12 col-md-4 d-flex flex-column align-items-center ">
+        <h5 class="fw-semibold mb-3">Contatti</h5>
+        <p class="mb-2 d-flex align-items-center gap-2">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{{ siteData.meta.address }}</span>
+        </p>
+        <p class="mb-2 d-flex align-items-center gap-2">
+          <i class="fas fa-envelope"></i>
+          <a class="text-white text-decoration-none" :href="'mailto:' + siteData.meta.email">
+            {{ siteData.meta.email }}
+          </a>
+        </p>
+        <p class="mb-0 d-flex align-items-center gap-2">
+          <i class="fas fa-phone-alt"></i>
+          <a class="text-white text-decoration-none" :href="'tel:' + siteData.meta.phone">
+            {{ siteData.meta.phone }}
+          </a>
+        </p>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="col-12 col-md-4 d-flex flex-column align-items-center ">
+        <h5 class="fw-semibold mb-3">Seguici</h5>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white fs-4"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white fs-4"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4" />
+    <div class="text-center small">
+      &copy; {{ new Date().getFullYear() }} Sonnenhof. Tutti i diritti riservati.
+    </div>
   </div>
+</footer>
+
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
