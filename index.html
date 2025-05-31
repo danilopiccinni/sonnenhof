@@ -17,7 +17,7 @@
 <body>
   <div id="app">
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg bg-secondary bg-opacity-75 sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg bg-success bg-opacity-75 sticky-top shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">{{ siteData.name }}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -94,7 +94,7 @@
     <!-- ABOUT -->
     <section class="py-5 bg-white" id="about">
       <div class="container text-center">
-        <h2>Chi siamo</h2>
+        <h2 class="text-success">Chi siamo</h2>
         <p class="lead">{{ siteData.about }}</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facilis quidem aspernatur eius perspiciatis, reprehenderit molestias porro natus quis rerum mollitia molestiae dolores laudantium dolore cumque autem sit itaque deleniti.lore
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt magni et, quibusdam, qui nobis sed natus sit nesciunt ad ipsum cumque porro labore tempora perferendis ipsam culpa accusantium laborum!
@@ -145,7 +145,7 @@
                 <li><i class="fa-solid fa-check text-success me-2"></i> Escursioni guidate</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-primary mt-3">Contattaci</a>
+            <a href="#contact" class="btn btn-success mt-3">Contattaci</a>
           </div>
         </div>
       </div>
@@ -160,7 +160,7 @@
   <div class="container text-center">
 
     <!-- TITOLO ATTIRANTE -->
-    <h2 class="mb-4 text-primary fw-bold">Scopri ogni angolo della stanza</h2>
+    <h2 class="mb-4 text-success fw-bold">Scopri ogni angolo della stanza</h2>
 
 
     <!-- COLLAPSIBLE GALLERY -->
@@ -198,7 +198,7 @@
           <div class="col-md-4 mb-4" v-for="(service, index) in siteData.services" :key="index">
             <div class="card h-100 text-center">
               <div class="card-body">
-                <i :class="service.icon + ' fa-3x mb-3 text-primary'"></i>
+                <i :class="service.icon + ' fa-3x mb-3 text-success'"></i>
                 <h5>{{ service.title }}</h5>
                 <p>{{ service.description }}</p>
               </div>
@@ -211,7 +211,7 @@
     <!-- GALLERY -->
     <section class="py-5" id="gallery">
     <div class="container">
-        <h2 class="text-center mb-4">Galleria</h2>
+        <h2 class="text-center text-success mb-4">Galleria</h2>
         <div class="row g-3">
         <div class="col-sm-6 col-md-4" v-for="(img, index) in siteData.gallery" :key="index">
             <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
@@ -230,7 +230,7 @@
     
     <!-- INTESTAZIONE -->
     <div class="text-center mb-4">
-      <h2>Contattaci</h2>
+      <h2 class="text-success">Contattaci</h2>
       <p class="mb-0">
         Per prenotazioni o informazioni scrivici a
         <strong><span class="text-nowrap">{{ siteData.meta.email }}</span></strong>
@@ -256,7 +256,7 @@
             <textarea class="form-control" id="message" rows="5" placeholder="Scrivici il tuo messaggio..." required></textarea>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-primary px-4">Invia Messaggio</button>
+            <button type="submit" class="btn btn-success px-4">Invia Messaggio</button>
           </div>
         </form>
       </div>
@@ -267,7 +267,7 @@
 
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white pt-5 pb-4">
+<footer class="bg-success bg-opacity-75 text-white pt-5 pb-4">
   <div class="container">
     <div class="row justify-content-center text-center  g-4">
       
