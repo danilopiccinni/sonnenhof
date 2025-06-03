@@ -29,3 +29,8 @@
 h2 {
   padding-top: 30px;
 }
+
+.top-75 {
+  top: 75% !important;
+}
+
