@@ -9,19 +9,20 @@ createApp({
           email: "infosonnenhof@gmail.com",
           phone: "+39 338 192 56 16",
           address: "St. Josefstraße 144, Lagundo - BO",
-          description: "Il maso Sonnenhof offre ospitalità in un appartamento immerso nella natura, tra le montagne dell'Alto Adige."
+          description: "Der Sonnenhof bietet Gastfreundschaft in einer Ferienwohnung inmitten der Natur, umgeben von den Bergen Südtirols.",
         },
         menu: [
-          { label: "Home", href: "#heroCarousel" },
-          { label: "Chi siamo", href: "#about" },
-          { label: "Affitta", href: "#rent" },
-          { label: "Servizi", href: "#services" },
-          { label: "Galleria", href: "#gallery" },
-          { label: "Contatti", href: "#contact" }
+          { label: "Startseite", href: "#heroCarousel" },
+          { label: "Über uns", href: "#about" },
+          { label: "Mieten", href: "#rent" },
+          { label: "Leistungen", href: "#services" },
+          { label: "Galerie", href: "#gallery" },
+          { label: "Kontakt", href: "#contact" }
         ],
         hero: {
-          title: "Benvenuti al Sonnenhof",
-          subtitle: "Relax e natura nel cuore delle montagne",
+          title: "Willkommen am Sonnenhof",
+          subtitle: "Entspannung und Natur im Herzen der Berge",
+
           slides: [
             { img: "img/jumbo1.jpg" },
             { img: "img/jumbo2.jpg" },
@@ -29,21 +30,21 @@ createApp({
             { img: "img/jumbo4.jpg" },
           ]
         },
-        about: "Sonnenhof è una fattoria tradizionale dell'Alto Adige che offre ospitalità in un ambiente autentico, accogliente e immerso nella natura.",
+        about: "Der Sonnenhof ist ein traditioneller Bauernhof in Südtirol, der Gastfreundschaft in einer authentischen, gemütlichen und naturnahen Umgebung bietet.",
         services: [
           {
-            title: "Appartamento arredato",
-            description: "Un alloggio spazioso, in stile alpino, dotato di ogni comfort.",
+            title: "Möblierte Wohnung",
+            description: "Eine geräumige Unterkunft im alpinen Stil mit allem Komfort.",
             icon: "fa-solid fa-house"
           },
           {
-            title: "Esperienze rurali",
-            description: "Attività con gli animali, raccolta prodotti, vita in fattoria.",
+            title: "Ländliche Erlebnisse",
+            description: "Aktivitäten mit Tieren, Ernte von Produkten, Leben auf dem Bauernhof.",
             icon: "fa-solid fa-leaf"
           },
           {
-            title: "Panorami mozzafiato",
-            description: "Passeggiate tra i sentieri, viste spettacolari tutto l'anno.",
+            title: "Atemberaubende Ausblicke",
+            description: "Wanderungen auf Pfaden, spektakuläre Aussichten das ganze Jahr über.",
             icon: "fa-solid fa-mountain"
           }
         ],

@@ -94,11 +94,8 @@
     <!-- ABOUT -->
     <section class="py-5 bg-white" id="about">
       <div class="container text-center">
-        <h2 class="text-success">Chi siamo</h2>
+        <h2 class="text-success">Über uns</h2>
         <p class="lead">{{ siteData.about }}</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facilis quidem aspernatur eius perspiciatis, reprehenderit molestias porro natus quis rerum mollitia molestiae dolores laudantium dolore cumque autem sit itaque deleniti.lore
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt magni et, quibusdam, qui nobis sed natus sit nesciunt ad ipsum cumque porro labore tempora perferendis ipsam culpa accusantium laborum!
-        </p>
       </div>
     </section>
 
@@ -137,18 +134,19 @@
         <div class="card shadow-lg bg-light border-0 rounded-4 p-4 w-100">
           <div class="card-body d-flex flex-column justify-content-between h-100">
             <div>
-              <h3 class="card-title mb-3">Vivi un'esperienza autentica</h3>
-              <p class="card-text">Trascorri le tue giornate tra i ritmi lenti della natura. Al Sonnenhof potrai assaporare la vita di un vero maso altoatesino: animali, prodotti genuini, paesaggi mozzafiato.</p>
+              <h3 class="card-title mb-3">Erlebe echte Authentizität</h3>
+              <p class="card-text">Verbringe deine Tage im Einklang mit dem ruhigen Rhythmus der Natur. Am Sonnenhof kannst du das Leben auf einem echten Südtiroler Bauernhof genießen: Tiere, echte Produkte, atemberaubende Landschaften.</p>
               <ul class="list-unstyled">
-                <li><i class="fa-solid fa-check text-success me-2"></i> Attività con gli animali</li>
-                <li><i class="fa-solid fa-check text-success me-2"></i> Degustazioni e prodotti tipici</li>
-                <li><i class="fa-solid fa-check text-success me-2"></i> Escursioni guidate</li>
+                <li><i class="fa-solid fa-check text-success me-2"></i> Aktivitäten mit Tieren</li>
+                <li><i class="fa-solid fa-check text-success me-2"></i> Verkostungen und typische Produkte</li>
+                <li><i class="fa-solid fa-check text-success me-2"></i> Geführte Wanderungen</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-success mt-3">Contattaci</a>
+            <a href="#contact" class="btn btn-success mt-3">Kontaktiere uns</a>
           </div>
         </div>
       </div>
+
 
     </div>
   </div>
@@ -160,7 +158,7 @@
   <div class="container text-center">
 
     <!-- TITOLO ATTIRANTE -->
-    <h2 class="mb-4 text-success fw-bold">Scopri ogni angolo della stanza</h2>
+<h2 class="mb-4 text-success fw-bold">Entdecke jede Ecke des Zimmers</h2>
 
 
     <!-- COLLAPSIBLE GALLERY -->
@@ -193,7 +191,7 @@
     <!-- SERVICES -->
     <section class="py-5 bg-light" id="services">
       <div class="container">
-        <h2 class="text-center mb-4">I nostri servizi</h2>
+        <h2 class="text-center text-success mb-4">Leistungen</h2>
         <div class="row">
           <div class="col-md-4 mb-4" v-for="(service, index) in siteData.services" :key="index">
             <div class="card h-100 text-center">
@@ -211,7 +209,7 @@
     <!-- GALLERY -->
     <section class="py-5" id="gallery">
     <div class="container">
-        <h2 class="text-center text-success mb-4">Galleria</h2>
+        <h2 class="text-center text-success mb-4">Galerie</h2>
         <div class="row g-3">
         <div class="col-sm-6 col-md-4" v-for="(img, index) in siteData.gallery" :key="index">
             <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
@@ -230,37 +228,39 @@
     
     <!-- INTESTAZIONE -->
     <div class="text-center mb-4">
-      <h2 class="text-success">Contattaci</h2>
+      <h2 class="text-success">Kontaktiere uns</h2>
       <p class="mb-0">
-        Per prenotazioni o informazioni scrivici a
+        Für Reservierungen oder Informationen schreibe uns an
         <strong><span class="text-nowrap">{{ siteData.meta.email }}</span></strong>
-        o chiamaci al
+        oder rufe uns an unter
         <strong><span class="text-nowrap">{{ siteData.meta.phone }}</span></strong>.
       </p>
     </div>
+
 
     <!-- FORM -->
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <form>
           <div class="mb-3">
-            <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Il tuo nome" required>
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Dein Name" required>
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="La tua email" required>
+            <label for="email" class="form-label">E-Mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Deine E-Mail-Adresse" required>
           </div>
           <div class="mb-3">
-            <label for="message" class="form-label">Messaggio</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Scrivici il tuo messaggio..." required></textarea>
+            <label for="message" class="form-label">Nachricht</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Schreib uns deine Nachricht..." required></textarea>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-success px-4">Invia Messaggio</button>
+            <button type="submit" class="btn btn-success px-4">Nachricht senden</button>
           </div>
         </form>
       </div>
     </div>
+
 
   </div>
 </section>
